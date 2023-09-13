@@ -29,24 +29,21 @@ void insertatbegin(int data){
     head = newnode;
 }
 
-//insertion at end
+//insertion afternode
 
-void insertatend(int data){
+void insertafternode(struct node*list,int data){
     struct node*newnode= new struct node;
     newnode->data = data;
-    struct node*linked=head;
-    while(linked->next!=NULL){
-        linked = linked->next;
-    }
-    linked->next = newnode;
+    newnode->next=list->next;
+    list->next = newnode;
 }
 int main() {
     // Write C++ code here
     insertatbegin(2);
     insertatbegin(55);
     insertatbegin(33);
-    insertatend(12);
-    insertatend(90);
+    insertafternode(head->next,40);
+    insertafternode(head->next,62);
     cout<<"linked list:\n";
     printlist();
     return 0;
