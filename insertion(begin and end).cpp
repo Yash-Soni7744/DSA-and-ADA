@@ -29,6 +29,24 @@ void insertatbegin(int data){
     head = newnode;
 }
 
+//insertion at position
+void insertafternode(struct node*list,int data){
+    struct node*newnode= new struct node;
+    newnode->data = data;
+    newnode->next=list->next;
+    list->next = newnode;
+}
+int main() {
+    // Write C++ code here
+    insertatbegin(2);
+    insertatbegin(55);
+    insertatbegin(33);
+   
+    cout<<"linked list:\n";
+    printlist();
+    return 0;
+}
+
 //insertion at end
 
 void insertatend(int data){
@@ -47,6 +65,8 @@ int main() {
     insertatbegin(33);
     insertatend(12);
     insertatend(90);
+    insertafternode(head->next,40);
+    insertafternode(head->next,62);
     cout<<"linked list:\n";
     printlist();
     return 0;
