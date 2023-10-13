@@ -11,6 +11,7 @@ struct node*head = NULL;
 // displaying the list
 
 void printlist(){
+  
     struct node*p = head;
     cout<<"\n[ ";
     while(p!=NULL){
