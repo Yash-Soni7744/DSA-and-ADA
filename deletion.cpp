@@ -53,6 +53,7 @@ if (temp == NULL){
 
 //programme start
 int main(){
+  
     insertatbegin(12);
     insertatbegin(12);
     insertatbegin(12);
