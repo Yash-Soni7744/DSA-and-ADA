@@ -92,6 +92,7 @@ int main(){
     printlist();
     deletebegin();
     deleteatend();
+    deletenode(32);
     cout<<"linked list after deletion \n";
     printlist();
 }
