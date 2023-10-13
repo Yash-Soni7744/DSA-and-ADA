@@ -56,10 +56,10 @@ if (temp == NULL){
 int main(){
   
     insertatbegin(12);
-    insertatbegin(12);
-    insertatbegin(12);
-    insertatbegin(12);
-    insertatbegin(12);
+    insertatbegin(22);
+    insertatbegin(32);
+    insertatbegin(42);
+    insertatbegin(52);
     cout<<"linked list \n";
     printlist();
     deleteatend();
