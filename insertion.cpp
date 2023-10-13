@@ -22,6 +22,7 @@ void printlist(){
 }
 
 //insertion at beginning
+
 void insertatbegin(int data){
     struct node*newnode = new struct node;
     newnode->data = data;
