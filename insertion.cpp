@@ -9,7 +9,7 @@ struct node{
 
 struct node*head = NULL;
 
-//displaying the list
+// displaying the list
 
 void printlist(){
     struct node*p = head;
