@@ -7,6 +7,7 @@ struct node *next;
 struct node* front = NULL;
 struct node* rear = NULL;
 struct node* temp;
+
 void Insert() {
 int val;
 cout<<"Insert the element in queue : "<<endl;
