@@ -31,7 +31,7 @@ bool Stack::push(int x){
 
 int Stack::pop(){
     if(top<0){
-        cout<<"state under flow";
+        cout<<"stack under flow";
         return 0;
     }
     else{
