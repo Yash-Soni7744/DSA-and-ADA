@@ -1,97 +1,65 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-struct node {
+struct node{
     int data;
     struct node *next;
 };
+struct node *front = NULL;
+struct node *rear = NULL;
 
-struct node* front = NULL;
-struct node* rear = NULL;
-struct node* temp;
-
-void Insert() {
-    int val;
-    cout << "Insert the element in queue : " << endl;
-    cin >> val;
-
-    if (rear == NULL) {
-        rear = (struct node*)malloc(sizeof(struct node));
-        rear->next = NULL;
-        rear->data = val;
-        front = rear;
-    } else {
-        temp = (struct node*)malloc(sizeof(struct node));
-        rear->next = temp;
-        temp->data = val;
-        temp->next = NULL;
-        rear = temp;
+void enqueue(int data){
+    struct node *newnode = new struct node;
+    newnode->data = data;
+    newnode->next = NULL;
+    
+    if (front ==NULL && rear == NULL){
+        front = rear = newnode;
+    }
+    else{
+        rear->next = newnode;
+        rear = newnode;
     }
 }
 
-void Delete() {
+void dequeue(){
+    struct node *temp;
     temp = front;
-
-    if (front == NULL) {
-        cout << "Underflow" << endl;
-        return;
-    } else if (temp->next != NULL) {
-        temp = temp->next;
-        cout << "Element deleted from queue is : " << front->data << endl;
-        free(front);
-        front = temp;
-    } else {
-        cout << "Element deleted from queue is : " << front->data << endl;
-        free(front);
-        front = NULL;
-        rear = NULL;
+    
+    if(front == NULL && rear == NULL){
+        cout<<"queue is empty\n";
+    }
+    else{
+        cout<<"deleted element is "<<front->data<<endl;
+        front = front->next;
+        free(temp);
     }
 }
 
-void Display() {
-    temp = front;
-
-    if ((front == NULL) && (rear == NULL)) {
-        cout << "Queue is empty" << endl;
-        return;
+void display(){
+    struct node *temp = front;
+    
+    if(front == NULL && rear == NULL){
+        cout<<"queue is empty\n";
     }
-
-    cout << "Queue elements are: ";
-    while (temp != NULL) {
-        cout << temp->data << " ";
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
         temp = temp->next;
     }
-    cout << endl;
 }
 
-int main() {
-    int ch;
-    cout << "1) Insert element to queue" << endl;
-    cout << "2) Delete element from queue" << endl;
-    cout << "3) Display all the elements of queue" << endl;
-    cout << "4) Exit" << endl;
-
-    do {
-        cout << "Enter your choice : " << endl;
-        cin >> ch;
-
-        switch (ch) {
-            case 1:
-                Insert();
-                break;
-            case 2:
-                Delete();
-                break;
-            case 3:
-                Display();
-                break;
-            case 4:
-                cout << "Exit" << endl;
-                break;
-            default:
-                cout << "Invalid choice" << endl;
-        }
-    } while (ch != 4);
-
-    return 0;
+int main(){
+    enqueue(23);
+    enqueue(22);
+    enqueue(255);
+    enqueue(5);
+    enqueue(3);
+    enqueue(69);
+    dequeue();
+    dequeue();
+    display();
 }
+
+
+
+
